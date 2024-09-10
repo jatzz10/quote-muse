@@ -23,14 +23,18 @@ struct ContentView: View {
             Spacer()
             
             VStack {
-                Circle()
+                Rectangle()
                     .fill(colors.randomElement() ?? .blue)
+                    .frame(width: 340, height: 460)
+                    .cornerRadius(40)
                     .padding()
                     .overlay(
-                        Image(systemName: "figure.\(selected.lowercased())")
-                            .font(.system(size: 144))
-                            .foregroundColor(.white)
+                            Text("\(selected)")
+                                .font(.system(size: 24))
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
                         )
+                    
                 Text("\(selected)!")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             }
